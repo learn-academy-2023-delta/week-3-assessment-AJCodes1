@@ -1,5 +1,4 @@
 # ASSESSMENT 3: Interview Practice Questions
-
 Answer the following questions.
 
 First, without external resources. Challenge yourself to answer from memory as if you were in a job interview.

@@ -68,7 +68,6 @@ describe("sortedArray", () => {
       saturday: 60
     }
     // Expected output: [15, 15, 20, 30, 30, 60, 90]
-    
     const studyMinutesWeek2 = {
       sunday: 100,
       monday: 10,
@@ -92,6 +91,8 @@ const sortedArray = (object) => {
 
 
 
+
+
 // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
 
 // a) Create a test with expect statements for each of the variables provided.
@@ -108,19 +109,15 @@ describe("arraySum", () => {
     expect(arraySum(accountTransactions3)).toEqual([])
   })
 })
-
-
-
 const accountTransactions1 = [100, -17, -23, -9]
 // Expected output: [100, 83, 60, 51]
-
 const accountTransactions2 = [250, -89, 100, -96]
 // Expected output: [250, 161, 261, 165]
-
 const accountTransactions3 = []
 // Expected output: []
 
 // b) Create the function that makes the test pass.
+
 const arraySum= (array) => {
   let sum = 0
   let newArray = []
