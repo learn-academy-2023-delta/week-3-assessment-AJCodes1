@@ -1,6 +1,9 @@
 // ASSESSMENT 3: Coding Practical Questions with Jest
 
-const { describe } = require("yargs")
+
+
+
+
 
 // Please read all questions thoroughly
 // Pseudo coding is REQUIRED
@@ -29,6 +32,7 @@ describe("greaterThanTwo", () => {
 // // Pseudo code:
 // create a function named greaterThanTwo that takes in any number greater than 2.
 //previous 2 numbers of array added up equal next number of array.
+//create array and push into it
 // returns array of the length of the number inputed.
 // 
 
@@ -45,26 +49,24 @@ const greaterThanTwo = (num) => {
 
 
 
-
-
-
-
-
-
-
 // --------------------2) Create a function that takes in an object and returns an array of the values sorted from least to greatest.
 // Hint: Check out this resource: Object.values() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Object/values
 
 // a) Create a test with expect statements for each of the variables provided.
 // Pseudo code: 
 //create a function named sortedArray that takes in an object as parameter
-//
-
-
-
-
+//use the Object.values and sort to get the numbers from small to biggest
 describe("sortedArray", () => {
   it("Create a function that takes in an object and returns an array of the values sorted from least to greatest", () => {
+    const studyMinutesWeek1 = {
+      sunday: 90,
+      monday: 30,
+      tuesday: 20,
+      wednesday: 15,
+      thursday: 30,
+      friday: 15,
+      saturday: 60
+    }
     // Expected output: [15, 15, 20, 30, 30, 60, 90]
     
     const studyMinutesWeek2 = {
@@ -82,37 +84,32 @@ describe("sortedArray", () => {
   })
 })
 
-const studyMinutesWeek1 = {
-  sunday: 90,
-  monday: 30,
-  tuesday: 20,
-  wednesday: 15,
-  thursday: 30,
-  friday: 15,
-  saturday: 60
-}
 // b) Create the function that makes the test pass.
 const sortedArray = (object) => {
-  return Object.values(object)
+  return Object.values(object).sort((a, b) => a - b)
 }
-  console.log(sortedArray(studyMinutesWeek1))
-
-
-
-
-
-
-
-
-
-
+  
 
 
 
 // --------------------3) Create a function that takes in an array and returns an array of the accumulating sum. An empty array should return an empty array.
 
 // a) Create a test with expect statements for each of the variables provided.
-// Pseudo code:
+// Pseudo code: 
+//create a function called arraySum that takes in an array 
+//create a for loop to iterate the length of the array
+//create an empty array and use .push to push new sum into it
+// return the new array
+
+describe("arraySum", () => {
+  it(" takes in an array and returns an array of the accumulating sum. An empty array should return an empty array", () => {
+    expect(arraySum(accountTransactions1)).toEqual([100, 83, 60, 51])
+    expect(arraySum(accountTransactions2)).toEqual([250, 161, 261, 165])
+    expect(arraySum(accountTransactions3)).toEqual([])
+  })
+})
+
+
 
 const accountTransactions1 = [100, -17, -23, -9]
 // Expected output: [100, 83, 60, 51]
@@ -124,4 +121,12 @@ const accountTransactions3 = []
 // Expected output: []
 
 // b) Create the function that makes the test pass.
-
+const arraySum= (array) => {
+  let sum = 0
+  let newArray = []
+  for(let i = 0; i < array.length; i++) {
+    sum = array[i] + sum
+    newArray.push(sum)
+  }
+  return newArray
+}
