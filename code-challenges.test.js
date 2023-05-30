@@ -15,7 +15,7 @@ const { describe } = require("yargs")
 // --------------------1) Create a function that takes in a number (greater than 2) and returns an array that length containing the numbers of the Fibonacci sequence.
 
 // a) Create a test with expect statements for each of the variables provided.
-describe(greaterThanTwo, () => {
+describe("greaterThanTwo", () => {
   it("takes in a number (greater than 2) and returns an array that length containing the numbers of the Fibonacci sequence.", () => {
     const fibLength1 = 6
     // Expected output: [1, 1, 2, 3, 5, 8]
@@ -27,9 +27,21 @@ describe(greaterThanTwo, () => {
   })
 })
 // // Pseudo code:
+// create a function named greaterThanTwo that takes in any number greater than 2.
+//previous 2 numbers of array added up equal next number of array.
+// returns array of the length of the number inputed.
+// 
 
 // b) Create the function that makes the test pass.
+const greaterThanTwo = (num) => {
+  let array = [1, 1]
+  for(let i = 2; i < num; i++) {
+    array[i-2] + array[i-1] 
+    array.push(array[i-2] + array[i-1])
+  }
+  return array
 
+}
 
 
 
